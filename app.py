@@ -8,10 +8,12 @@ app = Flask(__name__)
 def hello_monkey():
   """Respond to incoming calls with a simple text message."""
 
-  resp = twilio.twiml.Response()
-  with resp.message("IT WORKS") as m:
-    m.media("https://demo.twilio.com/owl.png")
-  return str(resp)
+    mess = request.values.get('Body', None)
+
+    resp = twilio.twiml.Response()
+    resp.message(mess)
+
+    return str(resp)
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))

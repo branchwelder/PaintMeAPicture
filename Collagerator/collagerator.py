@@ -25,7 +25,7 @@ def collagerator(images):
 
 	for i in images[1:]:
 		im = Image.open(i).convert('RGBA')
-		im = im.rotate(random.randint(0,359), expand=1)
+		im = im.rotate(random.randint(0,359), expand=0)
 
 		size = im.size
 
@@ -53,7 +53,7 @@ def collagerator(images):
 		tiling.remove(offset)
 		out.paste(region, (offset,offset,newSize1+offset+300,newSize2+offset+300), region)
 
-	# out.show()
+	out.show()
 	out.save('Collagerator/images/final_result.jpg')
 	res = uploader.upload_files("Collagerator/images/final_result.jpg")
 

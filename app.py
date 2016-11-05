@@ -40,6 +40,9 @@ def make_collage(text):
     url = collagerator(img)
     return str(url[0])
 
+def bee_movie():
+    movie = open('Rhymelessmaster/books/beemovie.txt').join()
+    return str(movie)
 
 
 # ChatBot setup
@@ -58,6 +61,8 @@ def index():
 
     if user_message == "helpme":
         response_message.message(help_string)
+    elif user_message == "bee":
+        response_message.message(bee_movie)
     elif user_message == "fact":
         response_message.message("True fact: " + choose_fact())
     elif user_message[:7] == "newfact":

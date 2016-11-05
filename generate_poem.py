@@ -30,4 +30,4 @@ def poetry(keyword):
     return poem_generator.generate_poem()
 
 if __name__ == '__main__':
-    print poetry('shakespeare')
+    print poetry('draco')

@@ -51,7 +51,7 @@ def collagerator(images):
 		out.paste(region, (offset,offset,newSize1+offset,newSize2+offset), region)
 
 	# out.show()
-	out.save('images/final_result.jpg')
-
+	out.save('Collagerator/images/final_result.jpg')
+	
 if __name__ == "__main__":
 	collagerator(["images/loading.png","images/1.png","images/2.png","images/3.png"])

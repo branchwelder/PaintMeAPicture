@@ -22,7 +22,7 @@ def imager(searchterm_list):
     file_loc_list = []
     for term in searchterm_list:
         if not term:
-            new_term = 'kittens'
+            new_term = random.choice(cat_terms)
         else:
             words = term.split()
             new_term = words[0]
@@ -30,7 +30,7 @@ def imager(searchterm_list):
             for i in range(1, num_words):
                 new_term = new_term + '%20' + words[i]
         get_image(new_term)
-        file_loc_list.append('images/' + new_term + '.jpg')
+        file_loc_list.append('Collagerator/images/' + new_term + '.jpg')
     return file_loc_list
 
 
@@ -48,7 +48,7 @@ def get_image(searchterm):
     # get uri and save it to that Collagerator/images
     dictionary = json.loads(buf.getvalue())
     if len(dictionary[u'images']) == 0:
-        get_image('kittens')
+        get_image(random.choice(cat_terms))
     else:
         index = random.randint(0,len(dictionary))
         img_uri = dictionary[u'images'][index][u'display_sizes'][0][u'uri']
@@ -65,8 +65,11 @@ def save_image(url, searchterm):
     img = Image.open(file)
     img.save('Collagerator/images/' + searchterm + '.jpg')
 
+cat_terms = ['cat', 'lion', 'tiger', 'liger', 'feline', 'large cat',
+                'kitty', 'kitten', 'lynx', 'cat cat cat cat cat', 'kitty kat']
 
 if __name__ == '__main__':
     # get_image('woman%20search')
-    imager(['person walking', 'god'])
+    # imager(['person walking', 'god'])
     # imager(['multiword search term'])
+    print random.choice(cat_terms)

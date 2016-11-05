@@ -19,7 +19,7 @@ def upload_files(filename):
     return url
 
 # upload_files("images/loading.png")
-    
+
 def cleanup():
     response = resources_by_tag(DEFAULT_TAG)
     count = len(response.get('resources', []))

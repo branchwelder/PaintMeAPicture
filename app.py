@@ -8,6 +8,11 @@ from Collagerator.collagerator import collagerator
 
 app = Flask(__name__)
 
+os.environ["CLOUDINARY_URL"] = "cloudinary://883825118655646:VlZmyyexT5904-9WIUNTnQXb7ew@djj2spuau"
+os.environ["cloud_name"]="djj2spuau"
+os.environ["api_key"]="883825118655646"
+os.environ["api_secret"]="VlZmyyexT5904-9WIUNTnQXb7ew"
+
 help_string = "Thank you for using LolChat! Here are some things you can text me:\n\"collage\"+ your collage idea makes you a beautiful collage!\n\"newfact\"+your_fact adds a new fact to the Cat Fact database!\n\"fact\" will send you a random cat fact!\n\"word cloud\" will send you a word cloud!\nAnything else will start a conversation with Ron Obvious!"
 
 # helper functions

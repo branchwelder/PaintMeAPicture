@@ -13,7 +13,7 @@ def choose_fact():
     return random.choice(lines)
 
 def add_fact(fact):
-    with open('file.txt', 'a') as f:
+    with open('cat_facts.txt', 'a') as f:
         f.write(fact)
     return "Cat fact added!"
 

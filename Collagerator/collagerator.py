@@ -53,9 +53,9 @@ def collagerator(images):
 		tiling.remove(offset)
 		out.paste(region, (offset,offset,newSize1+offset+300,newSize2+offset+300), region)
 
-	out.show()
-	# out.save('Collagerator/images/final_result.jpg')
-	# res = uploader.upload_files("Collagerator/images/final_result.jpg")
+	# out.show()
+	out.save('Collagerator/images/final_result.jpg')
+	res = uploader.upload_files("Collagerator/images/final_result.jpg")
 
 	return res
 

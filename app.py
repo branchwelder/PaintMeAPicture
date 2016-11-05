@@ -49,6 +49,8 @@ def index():
         response_message.message(last_fact())
     elif user_message == "word cloud":
         response_message.message("cloud")
+    elif user_message == "dog":
+        response_message.message("HISSSSSSSSSSSSSSSSSSSSSSSS")
     else:
         response_message.message(chat(user_message))
 

@@ -4,17 +4,20 @@
 from Rhymelessmaster.rhymeless import Rhymeless
 
 
-poem_generator = Rhymeless()
-book = open("Rhymelessmaster/books/otoos11.txt", "r")
-lines = []
-for line in book:
-    lines.append(line)
-book = "".join(lines)
-# the book variable is just a huge string. I could also train
-# on individual strings, or tweets, or virtually any other
-# plain text content.
+keyword_dict = {'darwin': 'otoos11', 'war': 'wp'}
 
-poem_generator.train(book)
+def poetry(keyword):
+    poem_generator = Rhymeless()
+    if keyword in keyword_dict:
+        book = open("Rhymelessmaster/books/" + keyword_dict[keyword] + '.txt', 'r')
+    else:
+        book = open("Rhymelessmaster/books/otoos11.txt", "r")
+    lines = []
+    for line in book:
+        lines.append(line)
+    book = "".join(lines)
+    poem_generator.train(book)
+    return poem_generator.generate_poem()
 
 if __name__ == '__main__':
-    print poem_generator.generate_poem()
+    print poetry('war')

@@ -41,7 +41,7 @@ def make_collage(text):
     return str(url[0])
 
 def bee_movie():
-    movie = open('Rhymelessmaster/books/beemovie.txt').join()
+    movie = open('Rhymelessmaster/books/beemovie.txt').read()
     return str(movie)
 
 

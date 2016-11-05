@@ -21,8 +21,16 @@ def imager(searchterm_list):
     """
     file_loc_list = []
     for term in searchterm_list:
-        get_image(term)
-        file_loc_list.append('images/' + term + '.jpg')
+        if not term:
+            new_term = 'kittens'
+        else:
+            words = term.split()
+            new_term = words[0]
+            num_words = len(words)
+            for i in range(1, num_words):
+                new_term = new_term + '%20' + words[i]
+        get_image(new_term)
+        file_loc_list.append('images/' + new_term + '.jpg')
     return file_loc_list
 
 
@@ -36,11 +44,17 @@ def get_image(searchterm):
     c.setopt(c.HTTPHEADER, ['Api-Key:' + 'mu5xa4dbfaj6ucbb4xr85ka3']) # credentials['gettykey']])
     c.setopt(c.WRITEDATA, buf)
     c.perform()
+
     # get uri and save it to that Collagerator/images
     dictionary = json.loads(buf.getvalue())
-    index = random.randint(0,len(dictionary))
-    img_uri = dictionary[u'images'][index][u'display_sizes'][0][u'uri']
-    image = save_image(img_uri, searchterm)
+    if len(dictionary[u'images']) == 0:
+        get_image('kittens')
+    else:
+        index = random.randint(0,len(dictionary))
+        img_uri = dictionary[u'images'][index][u'display_sizes'][0][u'uri']
+        image = save_image(img_uri, searchterm)
+    # randomly choose an image from the dictionary
+
 
 
 def save_image(url, searchterm):
@@ -53,5 +67,6 @@ def save_image(url, searchterm):
 
 
 if __name__ == '__main__':
-    get_image('cats')
-    # imager(['computer','dog', 'woman%20eating%20salad'])
+    # get_image('woman%20search')
+    imager(['person walking', 'god'])
+    # imager(['multiword search term'])

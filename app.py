@@ -4,7 +4,7 @@ import os
 import random
 from chatterbot import ChatBot
 from retrieve_images import get_images_from_sentence
-from Collagerator/collagerator import collagerator
+from Collagerator.collagerator import collagerator
 
 app = Flask(__name__)
 

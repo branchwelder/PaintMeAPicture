@@ -14,7 +14,6 @@ keyword_dict = {'darwin': 'otoos11', 'evolution': 'otoos11',
     'america':'18127',
     'odysseus':'ulysses',
     'draco':'myimmortal',
-    'shakespeare':'rap',
     'bella':'twilight'}
 
 def poetry(keyword):

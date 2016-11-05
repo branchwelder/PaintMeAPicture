@@ -3,10 +3,12 @@ import twilio.twiml
 import os
 import random
 from chatterbot import ChatBot
+from retrieve_images import get_images_from_sentence
+from Collagerator.collagerator import collagerator
 
 app = Flask(__name__)
 
-help_string = "Thank you for using LolChat! Here are some things you can text me:\n\"newfact\"+your_fact adds a new fact to the Cat Fact database!\n\"fact\" will send you a random cat fact!"
+help_string = "Thank you for using LolChat! Here are some things you can text me:\n\"collage\"+ your collage idea makes you a beautiful collage!\n\"newfact\"+your_fact adds a new fact to the Cat Fact database!\n\"fact\" will send you a random cat fact!\n\"word cloud\" will send you a word cloud!\nAnything else will start a conversation with Ron Obvious!"
 
 # helper functions
 def choose_fact():
@@ -25,21 +27,25 @@ def last_fact():
 def chat(text):
     return str(chatbot.get_response(text))
 
+def make_collage(text):
+    img = get_images_from_sentence(text)
+    collagerator(img)
+    return str(img)
+
+
+
 # ChatBot setup
-chatbot = ChatBot(
-'Ron Obvious',
-trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
-)
+chatbot = ChatBot('Ron Obvious', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
 
 # Train based on the english corpus
 chatbot.train("chatterbot.corpus.english")
 
 # Route Logic
 @app.route("/", methods=['GET', 'POST'])
-def hello_monkey():
-    """Respond to incoming calls with a simple text message."""
+def index():
+    """Respond to incoming messages with a simple text message."""
 
-    user_message = request.values.get('Body', None).lower()
+    user_message = request.values.get('Body', None).lower().strip()
     response_message = twilio.twiml.Response()
 
     if user_message == "helpme":
@@ -48,8 +54,14 @@ def hello_monkey():
         response_message.message("True fact: " + choose_fact())
     elif user_message[:7] == "newfact":
         response_message.message(add_fact(user_message[8:]))
+    elif user_message[:7] == "collage":
+        response_message.message(make_collage(user_message[8:]))
     elif user_message == "last fact":
         response_message.message(last_fact())
+    elif user_message == "word cloud":
+        response_message.message("cloud")
+    elif user_message == "dog":
+        response_message.message("HISSSSSSSSSSSSSSSSSSSSSSSS")
     else:
         response_message.message(chat(user_message))
 

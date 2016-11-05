@@ -1,6 +1,7 @@
-""" Gets images from Getty Images based on searchterm.
+""" Gets images from Getty Images from a sentence.
 
     Dependencies: pycurl (for ubuntu: sudo apt install python-pycurl)
+                  pattern (for ubuntu: pip install pattern)
 """
 
 # import all those packages
@@ -11,6 +12,15 @@ import urllib
 import cStringIO
 from PIL import Image
 import random
+from pattern.en import parse
+
+def get_images_from_sentence(sentence):
+    """ Takes in a sentence, saves the images to the correct directory, and
+        returns a list of filepaths to the images.
+    """
+    nouns = remove_reserves(parser(sentence))
+    return imager(nouns)
+
 
 def imager(searchterm_list):
     """ Saves images from the searchterms into Collagerator/images.
@@ -56,7 +66,6 @@ def get_image(searchterm):
     # randomly choose an image from the dictionary
 
 
-
 def save_image(url, searchterm):
     """ Opens the image url and save it into the
         PaintMeAPicture/Collagerator/images folder.
@@ -65,11 +74,34 @@ def save_image(url, searchterm):
     img = Image.open(file)
     img.save('Collagerator/images/' + searchterm + '.jpg')
 
+
+def parser(text):
+    """ Takes in a sentence (string) and returns a list of nouns (strings).
+    """
+    list_parsed = parse(text).split()
+    nouns = []
+    for i in list_parsed[0]:
+        if 'NN' in i[1]:
+            nouns.append(str(i[0]))
+    return nouns
+
+
+def remove_reserves(list_nouns):
+    """ Takes in a list of nouns (strings) and returns a list of nouns that are
+        not reserved (strings).
+    """
+    for noun in list_nouns:
+        if noun in reserve_words:
+            list_nouns.remove(noun)
+    return list_nouns
+
+
+reserve_words = ['picture', 'painting', 'me', 'i']
+
 cat_terms = ['cat', 'lion', 'tiger', 'liger', 'feline', 'large cat',
                 'kitty', 'kitten', 'lynx', 'cat cat cat cat cat', 'kitty kat']
 
 if __name__ == '__main__':
     # get_image('woman%20search')
-    # imager(['person walking', 'god'])
+    imager(['person walking', 'god'])
     # imager(['multiword search term'])
-    print random.choice(cat_terms)

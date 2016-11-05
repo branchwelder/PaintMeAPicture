@@ -1,3 +1,5 @@
+import os
+
 os.environ["CLOUDINARY_URL"] = "cloudinary://883825118655646:VlZmyyexT5904-9WIUNTnQXb7ew@djj2spuau"
 os.environ["cloud_name"]="djj2spuau"
 os.environ["api_key"]="883825118655646"
@@ -6,7 +8,6 @@ os.environ["api_secret"]="VlZmyyexT5904-9WIUNTnQXb7ew"
 
 from flask import Flask, request, redirect
 import twilio.twiml
-import os
 import random
 from chatterbot import ChatBot
 from retrieve_images import get_images_from_sentence
@@ -35,8 +36,8 @@ def chat(text):
 
 def make_collage(text):
     img = get_images_from_sentence(text)
-    collagerator(img)
-    return str(img)
+    url = collagerator(img)
+    return url
 
 
 

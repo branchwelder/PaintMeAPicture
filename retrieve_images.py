@@ -1,5 +1,4 @@
 """ Gets images from Getty Images from a sentence.
-
     Dependencies: pycurl (for ubuntu: sudo apt install python-pycurl)
                   pattern (for ubuntu: pip install pattern)
 """
@@ -24,7 +23,6 @@ def get_images_from_sentence(sentence):
 
 def imager(searchterm_list):
     """ Saves images from the searchterms into Collagerator/images.
-
         Takes in: list of searchterms
         Returns: list of images (i.e., ['images/loading.png', 'images/searchterm.jpg'])
         Saves images in PaintMeAPicture/Collagerator/images
@@ -102,6 +100,7 @@ cat_terms = ['cat', 'lion', 'tiger', 'liger', 'feline', 'large cat',
                 'kitty', 'kitten', 'lynx', 'cat cat cat cat cat', 'kitty kat']
 
 if __name__ == '__main__':
-    # get_image('woman%20search')
-    imager(['person walking', 'god'])
+    # imager(['woman%20search','dog','cat','tree','love','life'])
+    # imager(['person walking', 'god'])
+    get_image('dog')
     # imager(['multiword search term'])

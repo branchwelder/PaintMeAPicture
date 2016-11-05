@@ -1,10 +1,12 @@
 from PIL import Image
 import random
-
+from cloudinary import uploader
+from cloudinary import utils
+import uploader
 def collagerator(images):
 	"""
 	Parameter: list of image names 
-	Returns: Void, but displays a collage of input images
+	Returns: link to hosted version of image
 
 	Requires: Python Image Library; pip install Pillow OR visit
 	'http://pillow.readthedocs.io/en/3.0.x/installation.html' for more details
@@ -52,6 +54,10 @@ def collagerator(images):
 
 	# out.show()
 	out.save('Collagerator/images/final_result.jpg')
-	
+	res = uploader.upload_files("Collagerator/images/final_result.jpg")
+
+	return res
+
+
 if __name__ == "__main__":
 	collagerator(["images/loading.png","images/1.png","images/2.png","images/3.png"])

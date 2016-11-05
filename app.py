@@ -3,10 +3,12 @@ import twilio.twiml
 import os
 import random
 from chatterbot import ChatBot
+from retrieve_images import get_images_from_sentence
+from Collagerator/collagerator import collagerator
 
 app = Flask(__name__)
 
-help_string = "Thank you for using LolChat! Here are some things you can text me:\n\"newfact\"+your_fact adds a new fact to the Cat Fact database!\n\"fact\" will send you a random cat fact!\nAnything else will start a conversation with Ron Obvious!"
+help_string = "Thank you for using LolChat! Here are some things you can text me:\n\"newfact\"+your_fact adds a new fact to the Cat Fact database!\n\"fact\" will send you a random cat fact!\n\"word cloud\" will send you a word cloud!\nAnything else will start a conversation with Ron Obvious!"
 
 # helper functions
 def choose_fact():
@@ -24,6 +26,12 @@ def last_fact():
 
 def chat(text):
     return str(chatbot.get_response(text))
+
+def make_collage(text):
+    img = get_images_from_sentence(text)
+    return str(img)
+
+
 
 # ChatBot setup
 chatbot = ChatBot('Ron Obvious', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
@@ -45,6 +53,8 @@ def index():
         response_message.message("True fact: " + choose_fact())
     elif user_message[:7] == "newfact":
         response_message.message(add_fact(user_message[8:]))
+    elif user_message[:7] == "collage":
+        response_message.message(make_collage(user_message[8:]))
     elif user_message == "last fact":
         response_message.message(last_fact())
     elif user_message == "word cloud":

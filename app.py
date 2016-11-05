@@ -3,7 +3,6 @@ import twilio.twiml
 import os
 import random
 from chatterbot import ChatBot
-from chatterbot.training.trainers import ChatterBotCorpusTrainer
 
 app = Flask(__name__)
 
@@ -27,8 +26,12 @@ def chat(text):
     return chatbot.get_response(text)
 
 # ChatBot setup
-chatbot = ChatBot("Ron Obvious")
-chatbot.set_trainer(ChatterBotCorpusTrainer)
+chatbot = ChatBot(
+'Ron Obvious',
+trainer='chatterbot.trainers.ChatterBotCorpusTrainer'
+)
+
+# Train based on the english corpus
 chatbot.train("chatterbot.corpus.english")
 
 # Route Logic

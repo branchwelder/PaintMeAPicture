@@ -29,32 +29,33 @@ def collagerator(images):
 
 		size = im.size
 
-		if size[0] >= final_dims[0]/2:
+		if size[0] >= final_dims[0]/1.1:
 			newSize1 = size[0]
 			
-			while newSize1 >= final_dims[0]/2:
-				newSize1 = int(round(newSize1/2))
+			while newSize1 >= final_dims[0]/1.1:
+				newSize1 = int(round(newSize1/1.1))
 
 		else:
 			newSize1 = size[0]
 
-		if size[1] >= final_dims[1]/1.3:
+		if size[1] >= final_dims[1]/1.1:
 			newSize2 = size[1]
 
-			while newSize2 >= final_dims[1]/2:
-				newSize2 = int(round(newSize2/1.3))
+			while newSize2 >= final_dims[1]/1.1:
+				newSize2 = int(round(newSize2/1.1))
 		else:
 			newSize2 = size[1]
 
 		box = (newSize1/2,newSize2/2,newSize1+(newSize1/2),newSize2+(newSize2/2))
 		region = im.crop(box)
+		region = region.resize((newSize1+300,newSize2+300))
 		offset = random.choice(tiling)
 		tiling.remove(offset)
-		out.paste(region, (offset,offset,newSize1+offset,newSize2+offset), region)
+		out.paste(region, (offset,offset,newSize1+offset+300,newSize2+offset+300), region)
 
-	# out.show()
-	out.save('Collagerator/images/final_result.jpg')
-	res = uploader.upload_files("Collagerator/images/final_result.jpg")
+	out.show()
+	# out.save('Collagerator/images/final_result.jpg')
+	# res = uploader.upload_files("Collagerator/images/final_result.jpg")
 
 	return res
 

@@ -1,26 +1,26 @@
-cats purr when they are dying or injured
+Cats purr when they are dying or injured.
 
 A group of cats is called a murder, which is appropriate, since that is what they are plotting.
 
-Every time a cat loses a whisker, an angels get its wings.
+Every time a cat loses a whisker, an angel gets its wings.
 
-Hip cat is a soul man
+Hip cat is a soul man.
 
 An event can only technically be called a "catastrophe" if at least one cat has died.
 
 Cattails are last remaining species of aquatic feline.
 
-cats only float when they're asleep
+Cats only float when they're asleep.
 
 The phrase "it's raining cats and dogs" is technically inaccurate. It originates from The Great New York Cat Shower of 1952, an event in which 800 cats were flung from the top of the Empire State Building. No dogs were actually present in the resulting rain.
 
-Cats are, contrary to popular belief, not dogs
+Cats are, contrary to popular belief, not dogs.
 
-Cats see using their ears, which is why they rotate
+Cats see using their ears, which is why they rotate.
 
-Cattails are indeed not cat tails
+Cattails are indeed not cat tails.
 
-Whereas dogs have "owners," cats have "staff"
+Whereas dogs have "owners," cats have "staff."
 
 Cats do not actually have nine lives. Exhaustive research indicates that, while exact counts vary, most stay permanently dead after just five kills.
 
@@ -47,7 +47,6 @@ If you shave a cat, it gets :really: mad.
 When raised in captivity, cats lose their vestigial wings by 3 months of age.
 
 Pianocat is the second nonhuman animal to learn the piano.
-
 The first, technically, was Johann Sebastian Bach.
 
 Concatenation occurs when three or more cats fuse, forming one "supercat" with their combined mass.
@@ -70,7 +69,7 @@ Cats are technically the larval form of wolves.
 
 Despite the name, the cattywampus is actually a reptile.
 
-Cat scans were initially developed by veterinarian science; their medical uses were discovered incidentally.
+Cat scans were initially developed by veterinary science; their medical uses were discovered incidentally.
 
 There is no fourth fact about cats. All others are just conjecture.
 
@@ -78,9 +77,9 @@ The word "catastrophe" hails back to ancient Egypt, where cats were viewed as ve
 
 Mountain lions are actually neither species of lion, nor of mountain.
 
-the word catastrophe comes from the time when a British merchant purchased a "cat ass trophy", which then fell upon his foot and shattered it.
+The word catastrophe comes from the time when a British merchant purchased a "cat ass trophy", which then fell upon his foot and shattered it.
 
-Immanuel Kant's "categorical imperative" was based on his hatred of cats; hence a demand to see them gored. He even went so far as to schedule cat stabbing times--hence, the "iCal"
+Immanuel Kant's "categorical imperative" was based on his hatred of cats; hence a demand to see them gored. He even went so far as to schedule cat stabbing times--hence, the "iCal."
 
 Cats were the first domesticated animal, hence "cattle." We switched to cows because they had better milk.
 
@@ -88,19 +87,19 @@ Catgut comes from the longcat.
 
 Caterpies are the larval form of cats.
 
-Polecats are named for the Polish cat who swam across the Mississippi river.
+Polecats are named for the Polish cat who swam across the Mississippi River.
 
 Don't forget that cat tails are merely a parasite that attaches itself to a cat's rear, travels with the cat, and then plants itself wherever the cat dies.
 
-Cats are secretly unicorns
+Cats are secretly unicorns.
 
-Cataracts are in fact the result of bad cat interactions
+Cataracts are in fact the result of bad cat interactions.
 
-Catastrophes are rewards for especially destructive cats
+Catastrophes are rewards for especially destructive cats.
 
-This time of year, a lot of prospective medical students are taking the MCATs. What you probably don't know is that all cats get a perfect score on account of them being cats
+This time of year, a lot of prospective medical students are taking the MCATs. What you probably don't know is that all cats get a perfect score on account of them being cats.
 
-There are only seven unique species of cat in existence
+There are only seven unique species of cat in existence.
 
 Frisky bits are made from human kidneys!
 

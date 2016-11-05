@@ -7,13 +7,15 @@ from Rhymelessmaster.rhymeless import Rhymeless
 keyword_dict = {'darwin': 'otoos11', 'evolution': 'otoos11',
     'war': 'wp', 'warren': 'wp',
     'carroll': 'wonderland','alice':'wonderland',
-    'shakespeare': 'shakespeare',
+    'bard': 'shakespeare','shakespeare':'shakespeare',
     'bee': 'beemovie',
     'plato':'republic',
     'don quixote':'996',
     'america':'18127',
     'odysseus':'ulysses',
-    'draco':'myimmortal'}
+    'draco':'myimmortal',
+    'shakespeare':'rap',
+    'bella':'twilight'}
 
 def poetry(keyword):
     poem_generator = Rhymeless()
@@ -29,4 +31,4 @@ def poetry(keyword):
     return poem_generator.generate_poem()
 
 if __name__ == '__main__':
-    print poetry('alice')
+    print poetry('shakespeare')

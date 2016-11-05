@@ -19,18 +19,14 @@ def poetry(keyword):
     poem_generator = Rhymeless()
     if keyword.lower() in keyword_dict:
         book = open("Rhymelessmaster/books/" + keyword_dict[keyword] + '.txt', 'r')
-        print 'opened book'
     else:
-        book = keyword
+        return "keyword not found :/ soz"
     lines = []
     for line in book:
         lines.append(line)
     book = "".join(lines)
-    book = "me"
-    print 'formatted'
     poem_generator.train(book)
-    print 'trained'
-    print poem_generator.generate_poem()
+    return poem_generator.generate_poem()
 
 if __name__ == '__main__':
-    print poetry('copy')
+    print poetry('alice')

@@ -4,14 +4,17 @@
 from Rhymelessmaster.rhymeless import Rhymeless
 
 
-keyword_dict = {'darwin': 'otoos11', 'war': 'wp'}
+keyword_dict = {'darwin': 'otoos11', 'evolution': 'otoos11',
+    'war': 'wp', 'warren': 'wp',
+    'carroll': 'wonderland',
+    'shakespeare': 'shakespeare'}
 
 def poetry(keyword):
     poem_generator = Rhymeless()
-    if keyword in keyword_dict:
+    if keyword.lower() in keyword_dict:
         book = open("Rhymelessmaster/books/" + keyword_dict[keyword] + '.txt', 'r')
     else:
-        book = open("Rhymelessmaster/books/otoos11.txt", "r")
+        book = keyword
     lines = []
     for line in book:
         lines.append(line)
@@ -20,4 +23,4 @@ def poetry(keyword):
     return poem_generator.generate_poem()
 
 if __name__ == '__main__':
-    print poetry('war')
+    print poetry('carroll')

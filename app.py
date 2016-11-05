@@ -29,6 +29,7 @@ def chat(text):
 
 def make_collage(text):
     img = get_images_from_sentence(text)
+    collagerator(img)
     return str(img)
 
 
@@ -42,7 +43,7 @@ chatbot.train("chatterbot.corpus.english")
 # Route Logic
 @app.route("/", methods=['GET', 'POST'])
 def index():
-    """Respond to incoming calls with a simple text message."""
+    """Respond to incoming messages with a simple text message."""
 
     user_message = request.values.get('Body', None).lower().strip()
     response_message = twilio.twiml.Response()

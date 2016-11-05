@@ -12,6 +12,7 @@ import random
 from chatterbot import ChatBot
 from retrieve_images import get_images_from_sentence
 from Collagerator.collagerator import collagerator
+from generate_poem import poetry
 
 app = Flask(__name__)
 
@@ -39,6 +40,9 @@ def make_collage(text):
     url = collagerator(img)
     return str(url[0])
 
+def bee_movie():
+    movie = open('Rhymelessmaster/books/beemovie.txt').join()
+    return str(movie)
 
 
 # ChatBot setup
@@ -57,6 +61,8 @@ def index():
 
     if user_message == "helpme":
         response_message.message(help_string)
+    elif user_message == "bee":
+        response_message.message(bee_movie())
     elif user_message == "fact":
         response_message.message("True fact: " + choose_fact())
     elif user_message[:7] == "newfact":
@@ -69,6 +75,8 @@ def index():
         response_message.message("cloud")
     elif user_message == "dog":
         response_message.message("HISSSSSSSSSSSSSSSSSSSSSSSS")
+    elif user_message[:4] == "poem":
+        response_message.message(poetry(user_message[5:]))
     else:
         response_message.message(chat(user_message))
 

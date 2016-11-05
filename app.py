@@ -2,6 +2,8 @@ from flask import Flask, request, redirect
 import twilio.twiml
 import os
 import random
+from chatterbot import ChatBot
+from chatterbot.training.trainers import ChatterBotCorpusTrainer
 
 app = Flask(__name__)
 
@@ -14,12 +16,20 @@ def choose_fact():
 
 def add_fact(fact):
     with open('cat_facts.txt', 'a') as f:
-        f.write(fact)
+        f.write(fact+"\n")
     return "Cat fact added!"
 
 def last_fact():
     lines = open('cat_facts.txt').read().splitlines()
     return lines[-1]
+
+def chat(text):
+    return chatbot.get_response(text)
+
+# ChatBot setup
+chatbot = ChatBot("Ron Obvious")
+chatbot.set_trainer(ChatterBotCorpusTrainer)
+chatbot.train("chatterbot.corpus.english")
 
 # Route Logic
 @app.route("/", methods=['GET', 'POST'])
@@ -38,7 +48,7 @@ def hello_monkey():
     elif user_message == "last fact":
         response_message.message(last_fact())
     else:
-        response_message.message("I'm going to assume you wanted a cat fact! True fact: " + choose_fact())
+        response_message.message(chat(user_message))
 
     return str(response_message)
 

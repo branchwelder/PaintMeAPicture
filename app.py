@@ -41,8 +41,9 @@ def make_collage(text):
     return str(url[0])
 
 def bee_movie():
-    movie = open('Rhymelessmaster/books/beemovie.txt').read().splitlines().join()
-    return str(movie)
+    movie = open('Rhymelessmaster/books/beemovie.txt').read().splitlines()
+    lol = "\n".join(movie)
+    return str(lol)
 
 
 # ChatBot setup

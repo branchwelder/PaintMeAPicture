@@ -25,7 +25,7 @@ def hello_monkey():
     user_message = request.values.get('Body', None).lower()
     response_message = twilio.twiml.Response()
 
-    if user_message == "help":
+    if user_message == "helpme":
         response_message.message(help_string)
     elif user_message == "fact":
         response_message.message("True fact: " + choose_fact())

@@ -8,9 +8,10 @@ def hello_monkey():
   """Respond to incoming calls with a simple text message."""
 
   resp = twilio.twiml.Response()
-  with resp.message("Hello, Mobile Monkey") as m:
+  with resp.message("IT WORKS") as m:
     m.media("https://demo.twilio.com/owl.png")
   return str(resp)
 
 if __name__ == "__main__":
-  app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)

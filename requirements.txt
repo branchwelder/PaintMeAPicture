@@ -3,5 +3,4 @@ twilio
 chatterbot
 pycurl
 pattern
-urllib
 PIL

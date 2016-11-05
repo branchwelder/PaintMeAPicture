@@ -41,9 +41,9 @@ def make_collage(text):
     return str(url[0])
 
 def bee_movie():
-    movie = open('Rhymelessmaster/books/beemovie.txt').join()
-    return str(movie)
-
+    movie = open('Rhymelessmaster/books/beemovie.txt').read().splitlines()
+    lol = "\n".join(movie)
+    return str(lol)
 
 # ChatBot setup
 chatbot = ChatBot('Ron Obvious', trainer='chatterbot.trainers.ChatterBotCorpusTrainer')
@@ -65,6 +65,8 @@ def index():
         response_message.message(bee_movie())
     elif user_message == "fact":
         response_message.message("True fact: " + choose_fact())
+    elif user_message == "who are you?":
+        response_message.message("42")
     elif user_message[:7] == "newfact":
         response_message.message(add_fact(user_message[8:]))
     elif user_message[:7] == "collage":

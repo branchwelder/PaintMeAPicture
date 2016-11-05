@@ -10,6 +10,12 @@ def choose_fact():
     return random.choice(lines)
 
 
+def add_fact(fact):
+    with open('file.txt', 'a') as f:
+        f.write(fact)
+    return "Cat fact added!"
+
+
 @app.route("/", methods=['GET', 'POST'])
 def hello_monkey():
     """Respond to incoming calls with a simple text message."""
@@ -19,6 +25,8 @@ def hello_monkey():
 
     if user_message == "fact":
         response_message.message("True fact: " + choose_fact())
+    elif user_message[:7] == "newfact":
+        response_message.message(add_fact(user_message[7:]))
     else:
         response_message.message("I'm going to assume you wanted a cat fact! True fact: " + choose_fact())
 

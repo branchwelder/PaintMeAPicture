@@ -12,6 +12,7 @@ import random
 from chatterbot import ChatBot
 from retrieve_images import get_images_from_sentence
 from Collagerator.collagerator import collagerator
+from generate_poem import poetry
 
 app = Flask(__name__)
 
@@ -69,6 +70,8 @@ def index():
         response_message.message("cloud")
     elif user_message == "dog":
         response_message.message("HISSSSSSSSSSSSSSSSSSSSSSSS")
+    elif user_message[:4] == "poem":
+        response_message.message(poetry(user_message[5:]))
     else:
         response_message.message(chat(user_message))
 

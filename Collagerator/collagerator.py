@@ -48,12 +48,12 @@ def collagerator(images):
 
 		box = (newSize1/2,newSize2/2,newSize1+(newSize1/2),newSize2+(newSize2/2))
 		region = im.crop(box)
-		region = region.resize((newSize1+300,newSize2+300))
+		region = region.resize((newSize1+200,newSize2+200))
 		offset = random.choice(tiling)
 		tiling.remove(offset)
-		out.paste(region, (offset,offset,newSize1+offset+300,newSize2+offset+300), region)
+		out.paste(region, (offset,offset,newSize1+offset+200,newSize2+offset+200), region)
 
-	out.show()
+	# out.show()
 	out.save('Collagerator/images/final_result.jpg')
 	res = uploader.upload_files("Collagerator/images/final_result.jpg")
 

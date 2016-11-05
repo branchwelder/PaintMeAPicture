@@ -3,7 +3,6 @@ twilio
 chatterbot
 pycurl
 pattern
-StringIO
 random
 json
 urllib

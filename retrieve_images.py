@@ -10,6 +10,7 @@ from StringIO import StringIO
 import urllib
 import cStringIO
 from PIL import Image
+import random
 
 def imager(searchterm_list):
     """ Saves images from the searchterms into Collagerator/images.
@@ -31,13 +32,14 @@ def get_image(searchterm):
     # retrieve image from Getty Images API
     buf = StringIO()
     c = pycurl.Curl()
-    c.setopt(c.URL, "https://api.gettyimages.com/v3/search/images?phrase=" + searchterm)
+    c.setopt(c.URL, "https://api.gettyimages.com/v3/search/images/creative?phrase=" + searchterm)
     c.setopt(c.HTTPHEADER, ['Api-Key:' + 'mu5xa4dbfaj6ucbb4xr85ka3']) # credentials['gettykey']])
     c.setopt(c.WRITEDATA, buf)
     c.perform()
     # get uri and save it to that Collagerator/images
     dictionary = json.loads(buf.getvalue())
-    img_uri = dictionary[u'images'][0][u'display_sizes'][0][u'uri']
+    index = random.randint(0,len(dictionary))
+    img_uri = dictionary[u'images'][index][u'display_sizes'][0][u'uri']
     image = save_image(img_uri, searchterm)
 
 
@@ -51,4 +53,5 @@ def save_image(url, searchterm):
 
 
 if __name__ == '__main__':
-    imager(['computer','dog'])
+    get_image('cats')
+    # imager(['computer','dog', 'woman%20eating%20salad'])

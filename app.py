@@ -23,7 +23,7 @@ def last_fact():
     return lines[-1]
 
 def chat(text):
-    return chatbot.get_response(text)
+    return str(chatbot.get_response(text))
 
 # ChatBot setup
 chatbot = ChatBot(

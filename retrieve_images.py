@@ -68,5 +68,5 @@ def save_image(url, searchterm):
 
 if __name__ == '__main__':
     # get_image('woman%20search')
-    # imager([''])
+    imager(['person walking', 'god'])
     # imager(['multiword search term'])

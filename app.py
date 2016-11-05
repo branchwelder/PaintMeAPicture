@@ -10,7 +10,7 @@ help_string = "Thank you for using LolChat! Here are some things you can text me
 
 # helper functions
 def choose_fact():
-    lines = open('cat_facts.txt').read().splitlines().strip()
+    lines = open('cat_facts.txt').read().splitlines()
     return random.choice(lines)
 
 def add_fact(fact):
@@ -36,7 +36,7 @@ chatbot.train("chatterbot.corpus.english")
 def index():
     """Respond to incoming calls with a simple text message."""
 
-    user_message = request.values.get('Body', None).lower()
+    user_message = request.values.get('Body', None).lower().strip()
     response_message = twilio.twiml.Response()
 
     if user_message == "helpme":

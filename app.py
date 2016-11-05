@@ -37,7 +37,7 @@ def chat(text):
 def make_collage(text):
     img = get_images_from_sentence(text)
     url = collagerator(img)
-    return url
+    return str(url[0])
 
 
 

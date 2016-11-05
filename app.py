@@ -62,7 +62,7 @@ def index():
     if user_message == "helpme":
         response_message.message(help_string)
     elif user_message == "bee":
-        response_message.message(bee_movie)
+        response_message.message(bee_movie())
     elif user_message == "fact":
         response_message.message("True fact: " + choose_fact())
     elif user_message[:7] == "newfact":

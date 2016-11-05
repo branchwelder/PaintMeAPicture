@@ -8,7 +8,7 @@ from Collagerator.collagerator import collagerator
 
 app = Flask(__name__)
 
-help_string = "Thank you for using LolChat! Here are some things you can text me:\n\"newfact\"+your_fact adds a new fact to the Cat Fact database!\n\"fact\" will send you a random cat fact!\n\"word cloud\" will send you a word cloud!\nAnything else will start a conversation with Ron Obvious!"
+help_string = "Thank you for using LolChat! Here are some things you can text me:\n\"collage\"+ your collage idea makes you a beautiful collage!\n\"newfact\"+your_fact adds a new fact to the Cat Fact database!\n\"fact\" will send you a random cat fact!\n\"word cloud\" will send you a word cloud!\nAnything else will start a conversation with Ron Obvious!"
 
 # helper functions
 def choose_fact():
